@@ -243,8 +243,7 @@ public void display(){
             case 4:{
                 System.out.println(" Finished! ");
             }
-            default :System.out.println(" invalid choice ");
-            
+            default :System.out.println(" invalid choice ");   
          }
          break;
         }
