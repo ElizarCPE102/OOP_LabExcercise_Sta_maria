@@ -249,3 +249,46 @@ public void display(){
         }
     }
 }
+
+
+/*
+package labexer5b;
+
+import java.util.*;
+public class LabExer5B {
+    
+    public static void main(String[] args) {
+       Scanner scan = new Scanner (System.in);
+        try{ 
+            System.out.println("Who is naruto's rival? ");
+            System.out.println("A. Sasuke  " + "B. Gaara  "+"C. Konohamaru  ");
+            
+            String Answer = scan.next();
+            int score = 0;
+            switch (Answer){
+                case "A":{
+                    System.out.println(" answer is correct!");
+                    score++;
+                    break;
+                }
+                case "B":{
+                    System.out.println(" answer is wrong! ");
+                    break;
+                }
+                case "C":{
+                    System.out.println(" answer is wrong! ");
+                    break;
+                }
+            }   
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid Input ");
+        }
+        catch(ArithmeticException e){
+            System.out.println(" Invalid Input Integer");
+        }
+        
+    }
+    
+}
+*\
