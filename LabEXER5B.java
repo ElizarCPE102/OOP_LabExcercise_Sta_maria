@@ -2,8 +2,7 @@
 //Laboratory Exercise 5
 package LABExecercise;
 import java.util.*;
-public class LabEXER5B {
-    
+public class LabEXER5B{
     public static void main (String []args){
         int x = 10;
         String quest[] = new String[x];
@@ -33,10 +32,11 @@ public class LabEXER5B {
          answer[9] ="c";
          
         Scanner scan = new Scanner(System.in);
-        try{
+        try{  
             for(x = 0; x < 10; x++){
                 System.out.println(quest[x]);
-                String ans = scan.next("[aA-bB-cC]");
+                String ans = scan.nextLine(    );
+                ans.compareTo("[aA,bB,cC]+");
             if(!ans.equalsIgnoreCase(answer[x])){
                 System.out.println(notif[1]);
                continue;
@@ -44,6 +44,8 @@ public class LabEXER5B {
                 System.out.println(notif[0]);
                 score++;
                 continue;
+            }if (ans == " "){
+                throw new Exception("Space is not allowed");
             }
             break;
             }
@@ -54,5 +56,6 @@ public class LabEXER5B {
         finally{
             System.out.println("Score: " + score +"/10");
         }
+        
     }
 }
