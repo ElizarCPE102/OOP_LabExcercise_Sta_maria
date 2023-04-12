@@ -36,7 +36,7 @@ public class LabEXER5B {
         try{
             for(x = 0; x < 10; x++){
                 System.out.println(quest[x]);
-                String ans = scan.next("[aA-bB-cC]+").toLowerCase();
+                String ans = scan.next("[aA-bB-cC]").toLowerCase();
             if(!ans.equals(answer[x])){
                 System.out.println(notif[1]);
                continue;
@@ -45,12 +45,12 @@ public class LabEXER5B {
                 score++;
                 continue;
             }
-            continue;
+            break;
             }
         }catch(Exception e){
             System.out.println("Invalid Input");
             System.out.println("Try again");
-            x--;
+            
         }
         finally{
             System.out.println("Score: " + score +"/10");
