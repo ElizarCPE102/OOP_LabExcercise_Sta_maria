@@ -16,7 +16,6 @@ public class LabEXER5B{
          quest[7] = "What is the planet closest to the sun?\n" + "A. Earth B. Mercury C. Pluto ";
          quest[8] = "Who lives in a pineapple under the sea?\n" + "A. Spongebob B. patrick C. Squidward ";
          quest[9] = "Mekhane belongs to what fictional universe?\n" + "A. Backrooms B. Marvel C. SCP ";
-        
         String[] notif = {"Correct!", "Wrong!"};
         int score = 0;
         String[] answer = new String[x];
@@ -30,32 +29,34 @@ public class LabEXER5B{
          answer[7] ="b";
          answer[8] ="a";
          answer[9] ="c";
-         
         Scanner scan = new Scanner(System.in);
         try{  
             for(x = 0; x < 10; x++){
                 System.out.println(quest[x]);
-                String ans = scan.nextLine(    );
-                ans.compareTo("[aA,bB,cC]+");
+                String ans = scan.nextLine();
+                if(ans.equalsIgnoreCase("a") || ans.equalsIgnoreCase("b") || ans.equalsIgnoreCase("c")){
             if(!ans.equalsIgnoreCase(answer[x])){
                 System.out.println(notif[1]);
                continue;
-            }else if(ans.equalsIgnoreCase(answer[x])){
+            } 
+            else if(ans.equalsIgnoreCase(answer[x])){
                 System.out.println(notif[0]);
                 score++;
                 continue;
-            }if (ans == " "){
-                throw new Exception("Space is not allowed");
             }
-            break;
-            }
+        }else{
+            x--;
+            System.out.println("Not Applicabble...\n pls try again");
+            continue;
+        }
+    }
         }catch(Exception e){
+            x--;
             System.out.println("Invalid Input");
             System.out.println("Try again");
         }
         finally{
             System.out.println("Score: " + score +"/10");
         }
-        
     }
 }
