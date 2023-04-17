@@ -9,6 +9,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Scanner;
+import java.awt.Graphics;
+
 
 
 public class Progress extends JFrame implements ActionListener {
@@ -17,37 +19,52 @@ public class Progress extends JFrame implements ActionListener {
     private double level;//level of the pet
     private int hatchrate;//when hatching the egg which will turn into a pet
     private Scanner input;
+    private JFrame f;
+    private JLabel kk;
+    private Image dbImage;
+    Image im;
+    
+
+    int x, y;
+    final TextField tf = new TextField();
+    Button start = new Button(" Start ");
 
     Progress(){
-        JFrame f = new JFrame("Welcome");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
-        f.setTitle("Pet Z");
-        f.setSize(2000, 1000);
-        f.setLayout(null);
-        f.setVisible(true);
+        ImageIcon j = new ImageIcon("C:/Elizar/Game Project/background1.png");
+        im = j.getImage();
+        
+       
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+        setTitle("Pet Z");
+        setSize(2000, 1000);
+        setLayout(null);
+        setVisible(true);
+        setResizable(false);
 
-        Button start = new Button(" Start ");
-        start.setBackground(Color.CYAN);
-        start.setBounds(520,300,200,65);
-        f.add(start);
-        ImageIcon image = new ImageIcon(getClass().getResource("background1.png")); 
-        JLabel pic = new JLabel(image);
-        f.add(pic);
+        
+        start.setBackground(Color.MAGENTA);
+        start.setBounds(520,300,200,40);
+        start.addActionListener(this);
+        add(start); 
+        
+
+    }
+    public void paint(Graphics g){
+        g.drawImage(im, 0, 0, null);
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        start.setBackground(Color.ORANGE);
+        tf.setBounds(540,500, 150,20);  
+        add(tf);  
+        tf.setVisible(true);
+        tf.setText("Enter pet Name");
+        tf.setBackground(Color.ORANGE);    
     }
 
-
-
-    public void actionPerformed(ActionEvent nextScreen){
- 
-    }
-    
-    
-    
 
     public static void main(String args[]){
         Progress f = new Progress();
-       
-
+        
     }
-    
 }
