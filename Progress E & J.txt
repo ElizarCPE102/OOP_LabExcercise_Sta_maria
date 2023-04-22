@@ -1,0 +1,113 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package progress;
+
+/*
+Elizar & Jucel
+netbeans
+progress
+
+*/
+
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Scanner;
+import java.awt.Graphics;
+
+public class Progress extends JFrame implements ActionListener {
+    protected int energy;//energy of the pet
+    protected int health;//health of the pet
+    protected int level;//level of the pet
+    protected String petname;//name of the pet
+    private String status;
+    private int hatchrate;// egg hatch timer
+    private Scanner input;
+    private JFrame f;
+    private JLabel kk;
+    
+    public Progress(String petname,int energy,int health,int level){
+        this.energy = energy;
+        this.health = health;
+        this.level = level;
+        this.petname = petname;
+       }
+    
+    //images
+    Image im;
+    ImageIcon j = new ImageIcon("C:/SampleBG/background.png"); 
+    
+    
+    int x, y;
+    final TextField tf = new TextField();
+    
+    //buttons
+    JButton start = new JButton(new ImageIcon("C:/SampleBG/strt.png"));
+    Button newG = new Button();
+    
+    //font of main frame
+    Font fnt = new Font ("Times New Roman", Font.ITALIC,150);
+    Font fnt1 = new Font ("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT,30);
+    
+    
+    
+    
+    
+    
+    public void actionPerformed(ActionEvent e){
+      
+        
+   
+    }
+    
+    
+    //Load Image, Frame and Buttons.
+    Progress(){  
+        
+        im = j.getImage();
+        im.getScaledInstance(2000, 1000, Image.SCALE_SMOOTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+        setTitle("Pet Z");
+        setSize(1000, 1000);
+        setLayout(null);
+        setVisible(true);
+        setResizable(true);
+        
+ 
+
+        start.setBounds(520,300,300,50);
+        start.addActionListener(this);
+        add(start);
+ 
+        
+        
+    }
+    
+    
+    public void paint(Graphics g){
+        Graphics2D g2 = (Graphics2D) g;    
+        Graphics g3 = (Graphics) g; 
+        g.drawImage(im, 0, 0, null);
+        g2.setFont(fnt);
+        g.drawString("PET Z ", 435, 200);
+        g2.setFont(fnt1);
+        g.drawString("The Legend has risen ", 435, 240);
+        
+        /*
+        Toolkit t = Toolkit.getDefaultToolkit();  
+        Image i = t.getImage("C:/SampleBG/bird.png");  
+        g3.drawImage(i, 120,100,this);  
+ 
+        */
+        
+
+    }
+  
+    public static void main(String[] args) {
+        Progress f = new Progress();
+    }
+    
+}
